@@ -1,7 +1,22 @@
+#Iterative approach
+
 class Solution:
     def getAlternates(self, arr):
         # Code Here
         l=[]
         for i in range(0,len(arr),2):
             l.append(arr[i])
+        return l
+
+#Recursive approach
+
+class Solution:
+    def alt(self,i,arr,l):
+        if i < len(arr):
+            l.append(arr[i])
+            self.alt(i + 2,arr, l)
+    def getAlternates(self, arr):
+        # Code Here
+        l=[]
+        self.alt(0,arr,l)
         return l
